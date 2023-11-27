@@ -1,0 +1,92 @@
+body {
+    background-color: #fbf3ef;
+    font-size: large;
+}
+
+#banner img {
+    border: 4px groove salmon;
+    margin-top: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+}
+input[type=text] {
+    font-size: large;
+    margin-right: 20%;
+}
+input[type=button] {
+    background-color: antiquewhite;
+    font-family: Verdana;
+    color: #682f0b;
+    font-size: larger;
+}
+
+input[type=button]:hover {
+    background-color: salmon;
+}
+
+select {
+    background-color: white;
+    font-size: larger;
+    border-color: #682f0b;
+    font-family: Verdana;
+    color: rgb(253, 104, 129);
+}
+
+#mealForm {
+    border: 4px solid salmon;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+#userInfo {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#userInfo label {
+    margin-left: 1%;
+    font-family: Verdana;
+    font-weight: bold;
+    color: #876956;
+}
+#userInfo input {
+    margin-left: 1%;
+    margin-right: 65%;
+}
+#userInfo textarea {
+    margin-left: 1%;
+    margin-right: 25%;
+}
+
+#mealPlan {
+    font-family: Verdana;
+    color: #876956;
+    margin-left: 1%;
+}
+
+#buttons {
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.days h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: cursive;
+    color: salmon;
+    text-shadow: 1px 1px #682f0b;
+}
+
+.hidden {
+    display: none;
+}
+
+.invalid {
+    border-color: red;
+    background-color: rgb(246, 101, 101);
+}

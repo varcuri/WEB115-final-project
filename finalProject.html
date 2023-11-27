@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="projectJS.js" defer></script>
+        <title>WEB-115 Final Project</title>
+        <link rel="stylesheet" href="build.css">
+    </head>
+    <body>
+        <div id="banner">
+            <img src="banner.png" alt="Build Your Meal Plan Banner"/>
+        </div>
+        <form id="mealForm">
+            <div id="userInfo">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your Name"/>
+            
+                <label for="email">email</label>
+                <input id="email" type="text" placeholder="email@example.com"/>
+
+                <label for="goal">Goal</label>
+                <textarea id="goal" rows="3" cols="50" placeholder="Set your goals here!"></textarea>
+            </div>
+            <div id="mealPlan">
+                <h2>Meal Plan</h2>
+                <p>Enter your meals as a comma-separated list of items.</p>
+                <label for="daySelector">Select Day of Week to Edit</label><br/>
+                <select id="daySelector">
+                    <option value="monday" selected>Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+                <div id="mondayEdit" class="days">
+                    <h2>Monday</h2>
+                    <label>Breakfast</label>
+                    <input id="MObreakfast" type="text" placeholder="Oatmeal, Yogurt"/>
+                    <label>Snack 1</label>
+                    <input id="MOsnack1" type="text" placeholder="Apple"/>
+                    <label>Lunch</label>
+                    <input id="MOlunch" type="text" placeholder="Pear Salad, Hummus & Carrots"/>
+                    <label>Snack 2</label>
+                    <input id="MOsnack2" type="text" placeholder="Cashews"/>
+                    <label>Dinner</label>
+                    <input id="MOdinner" type="text" placeholder="Grilled Chicken, Roasted Chickpeas, Zuchinni"/>
+                </div>
+                <div id="tuesdayEdit" class="days hidden">
+                    <h2>Tuesday</h2>
+                    <label>Breakfast</label>
+                    <input id="TUbreakfast" type="text" placeholder="Granola, Blueberries"/>
+                    <label>Snack 1</label>
+                    <input id="TUsnack1" type="text" placeholder="Mandarin Oranges"/>
+                    <label>Lunch</label>
+                    <input id="TUlunch" type="text" placeholder="Green Curry, Brown Rice"/>
+                    <label>Snack 2</label>
+                    <input id="TUsnack2" type="text" placeholder="Celery, Peanut Butter"/>
+                    <label>Dinner</label>
+                    <input id="TUdinner" type="text" placeholder="Tuna, Green Beans, Spinach Salad"/>
+                </div>
+                <div id="wednesdayEdit" class="days hidden">
+                    <h2>Wednesday</h2>
+                    <label>Breakfast</label>
+                    <input id="WEbreakfast" type="text" placeholder="Mango Kale Smoothie"/>
+                    <label>Snack 1</label>
+                    <input id="WEsnack1" type="text" placeholder="Trail Mix"/>
+                    <label>Lunch</label>
+                    <input id="WElunch" type="text" placeholder="Chicken Salad"/>
+                    <label>Snack 2</label>
+                    <input id="WEsnack2" type="text" placeholder="Edamame"/>
+                    <label>Dinner</label>
+                    <input id="WEdinner" type="text" placeholder="Grilled Salmon, Asparagus"/>
+                </div>
+                <div id="thursdayEdit" class="days hidden">
+                    <h2>Thursday</h2>
+                    <label>Breakfast</label>
+                    <input id="THbreakfast" type="text" placeholder="Egg White Omelette"/>
+                    <label>Snack 1</label>
+                    <input id="THsnack1" type="text" placeholder="Apple"/>
+                    <label>Lunch</label>
+                    <input id="THlunch" type="text" placeholder="Falafel, Greek Salad"/>
+                    <label>Snack 2</label>
+                    <input id="THsnack2" type="text" placeholder="Cashews"/>
+                    <label>Dinner</label>
+                    <input id="THdinner" type="text" placeholder="Baked Branzino, Arugula Salad"/>
+                </div>
+                <div id="fridayEdit" class="days hidden">
+                    <h2>Friday</h2>
+                    <label>Breakfast</label>
+                    <input id="FRbreakfast" type="text" placeholder="Yogurt, Berries"/>
+                    <label>Snack 1</label>
+                    <input id="FRsnack1" type="text" placeholder="Mango"/>
+                    <label>Lunch</label>
+                    <input id="FRlunch" type="text" placeholder="Chef Salad"/>
+                    <label>Snack 2</label>
+                    <input id="FRsnack2" type="text" placeholder="Hummus & Carrots"/>
+                    <label>Dinner</label>
+                    <input id="FRdinner" type="text" placeholder="Tuscan Flatbread, Caesar Salad"/>
+                </div>
+                <div id="saturdayEdit" class="days hidden">
+                    <h2>Saturday</h2>
+                    <label>Breakfast</label>
+                    <input id="SAbreakfast" type="text" placeholder="Eggs, Turkey Sausage"/>
+                    <label>Snack 1</label>
+                    <input id="SAsnack1" type="text" placeholder="Trail Mix"/>
+                    <label>Lunch</label>
+                    <input id="SAlunch" type="text" placeholder="Sushi"/>
+                    <label>Snack 2</label>
+                    <input id="SAsnack2" type="text" placeholder="Cashews"/>
+                    <label>Dinner</label>
+                    <input id="SAdinner" type="text" placeholder="Turkey Burger"/>
+                </div>
+                <div id="sundayEdit" class="days hidden">
+                    <h2>Sunday</h2>                    
+                    <label>Breakfast</label>
+                    <input id="SUbreakfast" type="text" placeholder="Avocado Toast"/>
+                    <label>Snack 1</label>
+                    <input id="SUsnack1" type="text" placeholder="Grapes & Walnuts"/>
+                    <label>Lunch</label>
+                    <input id="SUlunch" type="text" placeholder="Watercress Sandwich"/>
+                    <label>Snack 2</label>
+                    <input id="SUsnack2" type="text" placeholder="Goat Cheese & Honey"/>
+                    <label>Dinner</label>
+                    <input id="SUdinner" type="text" placeholder="Seared Tuna, Charred Broccoli"/>
+                </div>
+            </div>
+            <div id="buttons">
+                <input id="clear" type="button" value="Clear"/>
+                <input id="create" type="button" value="Create Meal Plan"/>
+            </div>
+        </form>
+    </body>
+</html>
