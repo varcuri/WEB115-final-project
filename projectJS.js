@@ -40,7 +40,7 @@ daySelector.addEventListener("change", hideAllOtherDays);
 
 // Clear Inputs
 
-inputArray = []
+inputArray = [];
 for (day of "MO TU WE TH FR SA SU".split(" ")){
     for (meal of "breakfast snack1 lunch snack2 dinner".split(" ")) {
         let curInput = document.getElementById(day + "" + meal);
@@ -63,6 +63,33 @@ function clearAllInputs() {
 const clearBtn = document.getElementById("clear");
 clearBtn.addEventListener("click", clearAllInputs);
 
+
+// Use Default Options
+function useDefault() {
+    mealDataArray = [];
+    for (day of "MO TU WE TH FR SA SU".split(" ")){
+        for (meal of "breakfast snack1 lunch snack2 dinner".split(" ")) {
+            let curInput = document.getElementById(day + "" + meal);
+            mealDataArray.push(curInput);
+        }
+    }
+    for (let mealText of mealDataArray) {
+        mealText.value = mealText.placeholder;
+    }
+}
+const defaultBtn = document.getElementById("defaultBtn");
+defaultBtn.addEventListener("click", useDefault);
+
+// Print/Download Function
+function printDownload() {
+    const mealTable = document.getElementById("mealTable");
+    const printableArea = mealTable.innerHTML;
+    const originalContent = document.body.innerHTML;
+
+    document.body.innerHTML = printableArea;
+    window.print();
+    document.body.innerHTML = originalContent;
+} 
 
 // Build Meal Plan
 function createObject() {
@@ -106,7 +133,7 @@ function createObject() {
         saturdaySnack1: document.getElementById("SAsnack1").value.split(", "),
         saturdayLunch: document.getElementById("SAlunch").value.split(", "),
         saturdaySnack2: document.getElementById("SAsnack2").value.split(", "),
-        saturdaydayDinner: document.getElementById("SAdinner").value.split(", "),
+        saturdayDinner: document.getElementById("SAdinner").value.split(", "),
 
         sundayBreakfast: document.getElementById("WEbreakfast").value.split(", "),
         sundaySnack1: document.getElementById("WEsnack1").value.split(", "),
@@ -130,7 +157,7 @@ function listBuilder(array) {
 }
 
 function tableBuilder(mealObject) {
-    table_string = "<table>\n<tr>\n<th></th>\n"
+    table_string = "<table id='mealTable'>\n<tr>\n<th></th>\n"
     days = "monday tuesday wednesday thursday friday saturday sunday".split(" ");
     meals = "Breakfast Snack1 Lunch Snack2 Dinner".split(" ");
     for (let day of days) {
@@ -173,9 +200,21 @@ function createMealPage(mealObject) {
             <title>${makePageTitle(mealObject.userName)}</title>
         </head>
         <body>
-            <h2>${makePageTitle(mealObject.userName)}</h2>
-            ${makeGoal(mealObject.goal)}
-            ${tableBuilder(mealObject)}
+            <button id="print" onclick="printDownload()">Print/Download</button>
+            <div id="printableArea">
+                <h2>${makePageTitle(mealObject.userName)}</h2>
+                ${makeGoal(mealObject.goal)}
+                ${tableBuilder(mealObject)}
+            </div>
+            <script>
+                function printDownload() {
+                    const printContent = document.getElementById("printableArea").innerHTML;
+                    let page = document.body.innerHTML;
+                    document.body.innerHTML = printContent;
+                    window.print();
+                    document.body.innerHTML = page;
+                } 
+            </script>
         </body>
     </html>
     `
@@ -192,11 +231,8 @@ function validateEmail(email) {
 const createBtn = document.getElementById("create");
 createBtn.addEventListener("click", function() {
     obj = createObject();
-    // let day = 'monday';
-    // let meal = 'Breakfast';
-    // console.log(obj[day+""+meal]);
     if (validateEmail(obj.userEmail)) {
-        flyWindow = window.open('about:blank','myPop','width=700,height=400,left=200,top=200');
+        flyWindow = window.open('about:blank','myPop','width=1200,height=400,left=100,top=100');
         flyWindow.document.write(createMealPage(obj));
     } else {
         const email = document.getElementById("email");

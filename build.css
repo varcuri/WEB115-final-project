@@ -1,22 +1,17 @@
+/* Elements */
 body {
     background-color: #fbf3ef;
     font-size: large;
 }
 
-#banner img {
-    border: 4px groove salmon;
-    margin-top: 2.5%;
-    margin-left: 20%;
-    margin-right: 20%;
-    width: 60%;
-}
+
 input[type=text] {
     font-size: large;
     margin-right: 20%;
 }
 input[type=button] {
     background-color: antiquewhite;
-    font-family: Verdana;
+    font-family: "Verdana";
     color: #682f0b;
     font-size: larger;
 }
@@ -25,12 +20,24 @@ input[type=button]:hover {
     background-color: salmon;
 }
 
+textarea {
+    font-family: "Verdana";
+}
 select {
     background-color: white;
     font-size: larger;
     border-color: #682f0b;
-    font-family: Verdana;
+    font-family: "Verdana";
     color: rgb(253, 104, 129);
+}
+
+/* IDs*/
+#banner img {
+    border: 4px groove salmon;
+    margin-top: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
 }
 
 #mealForm {
@@ -46,7 +53,7 @@ select {
 
 #userInfo label {
     margin-left: 1%;
-    font-family: Verdana;
+    font-family: "Verdana";
     font-weight: bold;
     color: #876956;
 }
@@ -60,7 +67,7 @@ select {
 }
 
 #mealPlan {
-    font-family: Verdana;
+    font-family: "Verdana";
     color: #876956;
     margin-left: 1%;
 }
@@ -68,8 +75,10 @@ select {
 #buttons {
     margin-top: 2%;
     margin-left: 1%;
+    margin-bottom: 1%;
 }
 
+/* Classes */
 .days {
     display: grid;
     grid-template-columns: 1fr;
